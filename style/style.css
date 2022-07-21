@@ -47,12 +47,10 @@ html h4 {
 }
 
 .button {
-  display: flex;
-  align-items: center;
-  padding: 16px 32px;
+  display: inline-block;
+  padding: 15px 31px;
   border: 1px solid #f5443b;
   border-radius: 6px;
-  outline-offset: -10px;
   font-weight: 700;
   font-size: 16px;
   line-height: 119%;
@@ -69,11 +67,19 @@ html h4 {
 .button--accent {
   padding: 12px 32px;
   border: none;
-  background-color: #F5443B;
+  background-color: #f5443b;
   font-weight: 700;
   font-size: 14px;
   line-height: 121%;
-  color: #FFFFFF;
+  color: #ffffff;
+}
+
+.button--inactive {
+  opacity: 0.5;
+}
+.button--inactive:hover {
+  transform: scale(1);
+  cursor: default;
 }
 
 .header {
@@ -88,6 +94,7 @@ html h4 {
 .header__top-inner {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .header__top-left {
@@ -129,14 +136,121 @@ html h4 {
 .header__lang-btn {
   display: flex;
   align-items: center;
+  margin-right: 31px;
   font-weight: 500;
   font-size: 12px;
   line-height: 150%;
   color: #d1d1d7;
 }
-.header__lang-btn svg::after {
-  content: "";
-  background: url(../images/hero/poly-down.svg) no-repeat;
-  height: 6px;
-  width: 6px;
+.header__lang-btn svg {
+  margin-left: 4px;
+}
+
+.header__body-inner {
+  display: flex;
+}
+
+.header__body-right {
+  display: flex;
+  flex-direction: column;
+  max-width: 506px;
+}
+
+.header__heading h1 {
+  margin-bottom: 24px;
+}
+
+.header__text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 56px;
+}
+
+.header__body-search-form {
+  position: relative;
+  display: flex;
+  margin-bottom: 56px;
+}
+.header__body-search-form input {
+  flex-grow: 1;
+  background: #1f2143;
+  border-radius: 12px;
+  padding: 22px 60px 22px 32px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.4);
+}
+.header__body-search-form input::-moz-placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.4);
+}
+.header__body-search-form input:-ms-input-placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.4);
+}
+.header__body-search-form input::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.4);
+}
+.header__body-search-form button {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin-right: 12px;
+  border-radius: 6px;
+  background-color: #282b57;
+}
+.header__body-search-form button svg {
+  will-change: transform;
+  transition: all 0.6s;
+}
+.header__body-search-form button:hover svg {
+  transform: scale(1.1);
+  transition: all 0.3s;
+}
+
+.header__sugg-subtitle {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 34px;
+}
+
+.header__sugg-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.header__sugg-list a {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: rgba(154, 156, 203, 0.6);
+  padding: 7px 17px;
+  border: 1px solid rgba(154, 156, 203, 0.6);
+  border-radius: 8px;
+  will-change: transform;
+  transition: all 0.6s;
+}
+.header__sugg-list a:hover {
+  color: #ffffff;
+  border: 1px solid #f5443b;
+  background-color: #f5443b;
+  transition: all 0.3s;
 }
