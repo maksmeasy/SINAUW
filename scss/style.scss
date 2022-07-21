@@ -249,6 +249,12 @@ html {
     margin-right: 12px;
     border-radius: 6px;
     background-color: #282b57;
+    transition: all 0.6s;
+
+    &:hover {
+      background-color: #f5443b;
+      transition: all 0.3s;
+    }
 
     svg {
       will-change: transform;
@@ -257,6 +263,15 @@ html {
 
     &:hover svg {
       transform: scale(1.1);
+      transition: all 0.3s;
+    }
+
+    & path {
+      transition: all 0.6s;
+    }
+
+    &:hover path {
+      stroke: #ffffff;
       transition: all 0.3s;
     }
   }
