@@ -1,7 +1,7 @@
 // ======================================== VARS ========================================
 // ======================================== VARS ========================================
 $text-color: rgba(255, 255, 255, 0.4);
-$focus-b-sh: 0px 0px 15px #3f4177;
+$focus-b-sh: 0px 0px 20px 2px rgba(63, 65, 119, 0.8);
 // ======================================== VARS ========================================
 // ======================================== VARS ========================================
 
@@ -55,6 +55,9 @@ html {
 }
 .main__courses {
   padding: 65px 0;
+}
+.main__prising {
+  padding: 85px 0 115px;
 }
 .container {
   height: 100%;
@@ -197,16 +200,20 @@ html {
   position: relative;
   height: 100%;
   width: 100%;
+  z-index: -5;
 }
 .header__hero-ell-decor-top {
   position: absolute;
   top: 0;
   left: -25px;
 }
+.header__hero-book-box-wrap {
+}
 .header__hero-book-box {
   position: absolute;
   top: 28px;
   right: 93px;
+  z-index: 5;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -219,6 +226,10 @@ html {
   background-origin: border-box;
   background-clip: content-box, border-box;
   transform: rotate(12.79deg);
+}
+.header__hero-lamp-box-wrap {
+  position: absolute;
+  z-index: 5;
 }
 .header__hero-lamp-box {
   position: absolute;
@@ -329,12 +340,24 @@ html {
   right: -14px;
 }
 .header__body-right {
+  position: relative;
   display: flex;
   flex-direction: column;
   max-width: 506px;
 
   *:last-child {
     margin-bottom: 0;
+  }
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    left: -50px;
+    top: -50px;
+    right: 0;
+    bottom: -50px;
+    background: linear-gradient(270deg, rgb(23, 24, 54) 92%, rgba(23, 24, 54, 0) 100%);
   }
 }
 .header__heading {
@@ -525,7 +548,7 @@ html {
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 69px;
     z-index: -1;
     border: double 3px transparent;
     border-radius: 20px;
@@ -534,11 +557,11 @@ html {
     background-origin: border-box;
     background-clip: content-box, border-box;
     transition: all 0.6s 0.1s;
-
   }
   &:hover::after {
-    bottom: -69px;
+    bottom: 0;
     transition: all 0.3s;
+    // box-shadow: 0px 0px 15px 2px rgba(63, 65, 120, 0.4);
   }
   &:hover .courses__item-btn-wrap {
     visibility: visible;
@@ -657,10 +680,6 @@ html {
   color: rgba(255, 255, 255, 0.4);
 }
 .courses__item-btn-wrap {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -49px;
   display: flex;
   justify-content: center;
   visibility: hidden;
@@ -668,6 +687,7 @@ html {
   transition: all 0.3s;
 }
 .courses__item-btn {
+  margin-top: 28px;
 }
 .courses__button-wrap {
   display: flex;
@@ -675,4 +695,71 @@ html {
   margin-top: 48px;
 }
 .courses__button {
+}
+
+// ======================================== PRISING ========================================
+// ======================================== PRISING ========================================
+
+.prising {
+}
+.prising__inner {
+}
+.prising__heading {
+  margin-bottom: 84px;
+}
+.prising__heading-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.prising__heading-subtitle {
+  text-align: center;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.4);
+}
+.prising__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 42px;
+}
+.prising__list-item {
+  position: relative;
+  overflow: hidden;
+  border: double 3px transparent;
+  border-radius: 20px;
+  background-image: linear-gradient(180deg, #202246 -53.38%, rgba(40, 43, 87, 0.31) 100%),
+linear-gradient(180deg, rgba(50, 52, 101, 0.5) 0%, rgba(50, 52, 101, 0.15) 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+.prising__list-item-wrap {
+  padding: 40px 36px 36px 36px;
+}
+.prising__item-inner {
+}
+.prising__item-top {
+}
+.prising__item-top-icon {
+}
+.prising__item-top-info {
+}
+.prising__item-info-title {
+}
+.prising__item-info-price {
+}
+.prising__item-line {
+}
+.prising__item-content {
+}
+.prising__item-desc {
+}
+.prising__item-btn-wrap {
+}
+.prising__item-btn {
+}
+.prising__list-item-corner {
+  position: absolute;
+  right: -3px;
+  top: -3px;
 }
