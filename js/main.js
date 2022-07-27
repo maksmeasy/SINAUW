@@ -1,2 +1,115 @@
-var scene = document.getElementById('scene');
-var parallaxInstance = new Parallax(scene);
+// ===================== PARALLAX =====================
+
+var scene = document.getElementById('scene')
+var parallaxInstance = new Parallax(scene)
+
+// ===================== WEBINAR =====================
+
+var swiper = new Swiper('.swiper', {
+  effect: 'coverflow',
+  parallax: true,
+  loop: true,
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: 'auto',
+  coverflowEffect: {
+    rotate: 40,
+    stretch: 114,
+    depth: 350,
+    modifier: 1,
+    slideShadows: false,
+    scale: 0.8
+  }
+})
+
+jQuery(document).ready(function ($) {
+  ;(function initPlayVideo () {
+    var $videoCover = $('.f-video-cover')
+    // var $videoPlayerIframe = $('.f-video-player iframe')
+
+    $videoCover.on('click', function () {
+      $(this).fadeOut('.webinar__slide-img')
+      // $(this).src += '?feature=oembed&autoplay=1'
+    })
+  })()
+})
+
+// $('webinar__slide-wrapper').slick({
+//   swipe: true
+// })
+
+// $(function () {
+//   var videos = $('.video')
+
+//   videos.on('click', function () {
+//     var elm = $(this),
+//       conts = elm.contents(),
+//       le = conts.length,
+//       ifr = null
+
+//     for (var i = 0; i < le; i++) {
+//       if (conts[i].nodeType == 8) ifr = conts[i].textContent
+//     }
+
+//     elm.addClass('player').html(ifr)
+//     elm.off('click')
+//   })
+// })
+
+// $(function () {
+//   var videos = $('.YTvideo')
+
+//   $('.YTslider').on('afterChange', function () {
+//     videos.children('iframe').remove()
+//     videos.removeClass('player')
+//   })
+
+//   videos.on('click', function () {
+//     var that = $(this)
+
+//     setTimeout(function () {
+//       var YTid = that.data('yt_id')
+//       that
+//         .addClass('player')
+//         .append(
+//           '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' +
+//             YTid +
+//             '?autoplay=0" frameborder="0" allowfullscreen></iframe>'
+//         )
+//     }, 400)
+//   })
+// })
+
+// (function ($) {
+//   jQuery(document).ready(function ($) {
+//     swiper.on('transitionEnd', function (swiper) {
+//       var currentSlide, slideType, player, command
+//       currentSlide = $('.webinar__swiper-wrapper').find('.swiper-slide-active')
+//       previousSlide = $('.webinar__swiper-wrapper').find('.swiper-slide-prev')
+
+//       slideType = currentSlide.attr('class').split(' ')[1]
+//       player = currentSlide.find('iframe').get(0)
+//       command = {
+//         event: 'command',
+//         func: 'playVideo'
+//       }
+//       if (player != undefined) {
+//         player.contentWindow.postMessage(JSON.stringify(command), '*')
+//       }
+
+//       slideType = previousSlide.attr('class')
+//       if (slideType != undefined) {
+//         slideType = slideType.split(' ')[1]
+//         player = previousSlide.find('iframe').get(0)
+//         command = {
+//           event: 'command',
+//           func: 'pauseVideo'
+//         }
+//         // If you don't using autoplay you should use "stopVideo" instead of "pauseVideo"
+//         if (player != undefined) {
+//           player.contentWindow.postMessage(JSON.stringify(command), '*')
+//         }
+//       }
+//     })
+//   })
+// })(jQuery)
