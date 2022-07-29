@@ -1,7 +1,9 @@
 // ===================== PARALLAX =====================
 
-var scene = document.getElementById('scene')
-var parallaxInstance = new Parallax(scene)
+var scene_1 = document.getElementById('scene-1')
+var parallaxInstance = new Parallax(scene_1)
+var scene_2 = document.getElementById('scene-2')
+var parallaxInstance = new Parallax(scene_2)
 
 // ===================== WEBINAR =====================
 
@@ -14,8 +16,8 @@ var swiper = new Swiper('.swiper', {
   slidesPerView: 'auto',
   coverflowEffect: {
     rotate: 40,
-    stretch: 114,
-    depth: 350,
+    stretch: 118,
+    depth: 349,
     modifier: 1,
     slideShadows: false,
     scale: 0.8
@@ -24,11 +26,19 @@ var swiper = new Swiper('.swiper', {
 
 jQuery(document).ready(function ($) {
   ;(function initPlayVideo () {
+    // var $videoSlide = $('.swiper-slide')
     var $videoCover = $('.f-video-cover')
     // var $videoPlayerIframe = $('.f-video-player iframe')
 
     $videoCover.on('click', function () {
-      $(this).fadeOut('.webinar__slide-img')
+      // if ($(this).hasClass('swiper-slide-active')) {
+      //   $('.webinar__slide-img').fadeOut()
+      // }
+      // else {
+
+      // }
+      // $(this).fadeOut()
+      $(this, '.webinar__slide-img').fadeOut()
       // $(this).src += '?feature=oembed&autoplay=1'
     })
   })()
