@@ -123,3 +123,28 @@ jQuery(document).ready(function ($) {
 //     })
 //   })
 // })(jQuery)
+
+// --------------- SMOOTH-LINK ---------------
+// --------------- SMOOTH-LINK ---------------
+
+$('.header__nav-list a, .footer__nav-list a, .footer__logo').on(
+  'click',
+  function (e) {
+    e.preventDefault()
+    var id = $(this).attr('href'),
+      top = $(id).offset().top
+    $('body,html').animate({ scrollTop: top }, 1000)
+  }
+)
+
+// --------------- WOW ---------------
+// --------------- WOW ---------------
+
+wow = new WOW({
+  boxClass: 'wow', // default
+  animateClass: 'animated', // default
+  offset: 150,
+  mobile: true, // default
+  live: true // default
+})
+wow.init()

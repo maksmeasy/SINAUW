@@ -7,21 +7,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link rel="stylesheet" href="style/reset.css">
   <link rel="stylesheet" href="style/fonts.css">
   <link rel="stylesheet" href="style/style.css">
   <title>SINAUW</title>
 </head>
 
-<body>
+<body id="body">
   <div class="wrapper">
-    <header class="header scene">
+    <div class="overlay"></div>
+    <header class="header">
+      <a class="burger burger--follow" href="#">
+        <span></span>
+      </a>
       <div class="header__wrapper">
         <div class="header__top">
           <div class="container">
             <div class="header__top-inner">
               <div class="header__top-left">
-                <a class="header__logo logo" href="#">
+                <a class="header__logo logo" href="/">
                   <svg width="82" height="40" viewBox="0 0 82 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M75.469 28.7031C75.469 29.8586 73.6878 27.5476 72.5004 27.5476C71.3129 27.5476 68.938 29.8586 68.938 28.7031C71.3129 26.3921 71.3381 21.77 72.2629 21.77C73.1877 21.77 73.6878 26.3921 75.469 28.7031Z"
@@ -47,13 +52,13 @@
                       <a href="##" class="header__nav-link"><span>Home</span></a>
                     </li>
                     <li class="header__nav-item">
-                      <a href="##" class="header__nav-link">Courses</a>
+                      <a href="#courses" class="header__nav-link">Courses</a>
                     </li>
                     <li class="header__nav-item">
-                      <a href="##" class="header__nav-link">Webinar</a>
+                      <a href="#webinar" class="header__nav-link">Webinar</a>
                     </li>
                     <li class="header__nav-item">
-                      <a href="##" class="header__nav-link">Pricing</a>
+                      <a href="#prising" class="header__nav-link">Pricing</a>
                     </li>
                   </ul>
                 </nav>
@@ -75,7 +80,9 @@
                     <path d="M3 5L5.59808 0.5H0.401924L3 5Z" fill="#D1D1D7" />
                   </svg>
                 </a>
-                <a href="##" class="header__log-btn button button--accent">Login</a>
+                <div class="animate__animated animate__headShake animate__delay-3s">
+                  <a href="##" class="header__log-btn button button--accent">Login</a>
+                </div>
               </div>
             </div>
           </div>
@@ -84,7 +91,7 @@
           <div class="container">
             <div class="header__body-inner">
               <div class="header__body-wrapper">
-                <div class="header__body-left">
+                <div class="header__body-left header__body-left animate__animated animate__fadeInLeft">
                   <div id="scene-1" class="header__body-left-wrapper">
                     <div data-depth-x="0.05" data-depth-y="-0.03" class="header__hero-ell-decor-top">
                       <img src="images/hero/hero-decor/ellipses-top.svg">
@@ -139,11 +146,11 @@
                   </div>
                 </div>
                 <div class="header__body-right">
-                  <div class="header__heading">
+                  <div class="header__heading animate__animated animate__fadeInRight">
                     <h1 class="header__title">Grow Your Skills To Advance Your Career Path.</h1>
                   </div>
-                  <p class="header__text">We have something big for you who want to level up!</p>
-                  <form class="header__body-search-form" action="#">
+                  <p class="header__text animate__animated animate__fadeInRight">We have something big for you who want to level up!</p>
+                  <form class="header__body-search-form animate__animated animate__fadeInRight animate__delay-1s" action="#">
                     <input class="header__search-input" type="search" placeholder="What do you want to learn...">
                     <button class="header__search-btn">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -155,7 +162,7 @@
                       </svg>
                     </button>
                   </form>
-                  <div class="header__suggestions">
+                  <div class="header__suggestions animate__animated animate__fadeInRight animate__delay-2s">
                     <p class="header__sugg-subtitle">Suggestions</p>
                     <ul class="header__sugg-list">
                       <li class="header__sugg-item">
@@ -191,7 +198,7 @@
         <div class="container">
           <div class="featured__inner">
             <ul class="featured__list">
-              <li class="featured__list-item">
+              <li class="featured__list-item animate__animated animate__fadeInDown wow">
                 <div class="featured__icon">
                   <img src="images/featured/user-group.svg">
                 </div>
@@ -206,7 +213,7 @@
                   </div>
                 </div>
               </li>
-              <li class="featured__list-item">
+              <li data-wow-delay="0.3s" class="featured__list-item animate__animated animate__fadeInDown wow">
                 <div class="featured__icon">
                   <img src="images/featured/teacher.svg">
                 </div>
@@ -220,7 +227,7 @@
                   </div>
                 </div>
               </li>
-              <li class="featured__list-item">
+              <li data-wow-delay="0.6s" class="featured__list-item animate__animated animate__fadeInDown wow">
                 <div class="featured__icon">
                   <img src="images/featured/book-heart.svg">
                 </div>
@@ -239,7 +246,7 @@
           </div>
         </div>
       </section>
-      <section class="main__courses courses">
+      <section class="main__courses courses" id="courses">
         <div class="container">
           <div class="courses__inner">
             <div class="courses__heading">
@@ -376,7 +383,7 @@
                 </div>
               </li>
             </ul>
-            <div class="courses__button-wrap">
+            <div class="courses__button-wrap animate__animated animate__fadeInUp wow">
               <a href="##" class="courses__button button">
                 Show All Classes
               </a>
@@ -384,7 +391,7 @@
           </div>
         </div>
       </section>
-      <section class="main__webinar webinar">
+      <section class="main__webinar webinar" id="webinar">
         <div class="container">
           <div class="webinar__inner">
             <div class="webinar__heading">
@@ -421,7 +428,7 @@
                 </li>
               </ul>
             </div>
-            <div class="webinar__btn-wrapper">
+            <div class="webinar__btn-wrapper animate__animated animate__fadeInUp wow">
               <div class="webinar__btn">
                 <a class="webinar__button" href="##">See more webinar videos</a>
               </div>
@@ -429,7 +436,7 @@
           </div>
         </div>
       </section>
-      <section class="main__prising prising">
+      <section class="main__prising prising" id="prising">
         <div class="container">
           <div class="prising__inner">
             <div class="prising__heading">
@@ -548,7 +555,7 @@
                   </div>
                 </div>
               </li>
-              <li class="prising__list-item">
+              <li class="prising__list-item animate__animated animate__pulse animate__delay-1s wow">
                 <div class="prising__list-item-wrap">
                   <div class="prising__item-inner">
                     <div class="prising__item-top">
@@ -650,21 +657,21 @@
         <div class="container">
           <div class="app__inner">
             <div class="app__wrapper">
-              <div class="app__left">
+              <div class="app__left animate__animated animate__fadeInLeft wow">
                 <div class="app__heading">
                   <p class="app__heading-title">Get Our Apps, Now!</p>
                 </div>
                 <p class="app__text">Reach out our apps everywhere and everytime with Sinauw Mobile Application.</p>
                 <div class="app__btn-wrapper">
-                  <a class="app__btn-gp" href="##">
+                  <a class="app__btn-gp" href="https://play.google.com/store/games?hl=ru&gl=US" target="_blank">
                     <img src="images/app/gp.png">
                   </a>
-                  <a class="app__btn-as" href="##">
+                  <a class="app__btn-as" href="https://www.apple.com/ru/app-store/" target="_blank">
                     <img src="images/app/as.png">
                   </a>
                 </div>
               </div>
-              <div class="app__right">
+              <div class="app__right animate__animated animate__fadeInRight wow">
                 <div id="scene-2" class="app__right-wrapp">
                   <div data-depth="0.1" class="app__phone">
                     <img src="images/app/phone-screen.png">
@@ -703,9 +710,9 @@
         <div class="footer__inner">
           <div class="footer__body">
             <div class="footer__body-col">
-              <div class="footer__logo logo">
+              <a href="#body" class="footer__logo logo">
                 <img src="images/footer/footer-logo.svg" alt="">
-              </div>
+              </a>
               <p class="footer__text">Any feedback or questions? Contact us on our social media</p>
               <ul class="footer__socials-list">
                 <li class="footer__socials-item">
@@ -751,16 +758,16 @@
               </ul>
             </div>
             <div class="footer__body-col">
-              <h4 class="footer__body-title">Menu</h4>
-              <ul class="footer__body-list">
+              <h4 class="footer__nav-title">Menu</h4>
+              <ul class="footer__nav-list">
                 <li class="footer__list-item">
                   <a class="footer__item-link" href="##">Home</a>
                 </li>
                 <li class="footer__list-item">
-                  <a class="footer__item-link" href="##">Courses</a>
+                  <a class="footer__item-link" href="#courses">Courses</a>
                 </li>
                 <li class="footer__list-item">
-                  <a class="footer__item-link" href="##">Webinar</a>
+                  <a class="footer__item-link" href="#webinar">Webinar</a>
                 </li>
               </ul>
             </div>
@@ -796,10 +803,11 @@
               <h4 class="footer__body-title">Apps Download</h4>
               <ul class="footer__body-list">
                 <li class="footer__list-item">
-                  <a class="footer__item-link" href="##">Google Play Store</a>
+                  <a class="footer__item-link" href="https://play.google.com/store/games?hl=ru&gl=US"
+                    target="_blank">Google Play Store</a>
                 </li>
                 <li class="footer__list-item">
-                  <a class="footer__item-link" href="##">App Store</a>
+                  <a class="footer__item-link" href="https://www.apple.com/ru/app-store/" target="_blank">App Store</a>
                 </li>
               </ul>
             </div>
@@ -816,8 +824,12 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="js/parallax.js"></script>
   <script src="js/parallax.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script>
 
+  </script>
+
+  <script src="js/main.js"></script>
 
 </body>
 
