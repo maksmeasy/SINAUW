@@ -128,9 +128,8 @@ jQuery(document).ready(function ($) {
 // --------------- SMOOTH-LINK ---------------
 
 $('.header__nav-list a, .footer__nav-list a, .footer__logo').on(
-  'click',
-  function (e) {
-    e.preventDefault()
+  'click', function (e) {
+    // e.preventDefault()
     var id = $(this).attr('href'),
       top = $(id).offset().top
     $('body,html').animate({ scrollTop: top }, 1000)
@@ -148,3 +147,22 @@ wow = new WOW({
   live: true // default
 })
 wow.init()
+
+// --------------- BURGER ---------------
+// --------------- BURGER ---------------
+setInterval(() => {
+  if (
+    $(window).scrollTop() > 0 &&
+    $('.header__top').hasClass('header__top--open') === false
+  ) {
+    $('.burger').addClass('burger--follow')
+  } else {
+    $('.burger').removeClass('burger--follow')
+  }
+}, 0)
+$('.burger, .overlay, .header__top a').on('click', function (e) {
+  e.preventDefault()
+  $('.header__top').toggleClass('header__top--open')
+  $('.overlay').toggleClass('overlay--show')
+  $('.burger').toggleClass('burger--open')
+})
