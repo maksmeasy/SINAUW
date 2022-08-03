@@ -1751,7 +1751,7 @@ html h4 {
     min-width: 100%;
   }
   .header__body {
-    padding: 120px 0 40px;
+    padding: 140px 0 140px;
   }
   .header__body-right {
     width: 100vw;
@@ -1870,7 +1870,7 @@ html h4 {
     padding: 15px 0;
   }
   .header__body {
-    padding: 80px 0 20px;
+    padding: 90px 0 90px;
   }
   .header__text {
     font-size: 15px;

@@ -139,7 +139,7 @@ $('.scroll-to, .footer__nav-list a, .footer__logo').on('click', function (e) {
 wow = new WOW({
   boxClass: 'wow', // default
   animateClass: 'animated', // default
-  offset: 150,
+  offset: 100,
   mobile: true, // default
   live: true // default
 })
