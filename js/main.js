@@ -9,7 +9,6 @@ var parallaxInstance = new Parallax(scene_2)
 
 var swiper = new Swiper('.swiper', {
   effect: 'coverflow',
-  parallax: true,
   loop: true,
   grabCursor: true,
   centeredSlides: true,
@@ -127,14 +126,12 @@ jQuery(document).ready(function ($) {
 // --------------- SMOOTH-LINK ---------------
 // --------------- SMOOTH-LINK ---------------
 
-$('.header__nav-list a, .footer__nav-list a, .footer__logo').on(
-  'click', function (e) {
-    // e.preventDefault()
-    var id = $(this).attr('href'),
-      top = $(id).offset().top
-    $('body,html').animate({ scrollTop: top }, 1000)
-  }
-)
+$('.scroll-to, .footer__nav-list a, .footer__logo').on('click', function (e) {
+  // e.preventDefault()
+  var id = $(this).attr('href'),
+    top = $(id).offset().top
+  $('body,html').animate({ scrollTop: top }, 1000)
+})
 
 // --------------- WOW ---------------
 // --------------- WOW ---------------
@@ -165,4 +162,26 @@ $('.burger, .overlay, .header__top a').on('click', function (e) {
   $('.header__top').toggleClass('header__top--open')
   $('.overlay').toggleClass('overlay--show')
   $('.burger').toggleClass('burger--open')
+})
+
+// setInterval(() => {
+//     if ($(window).scrollTop() > 0 && $('.header__top').hasClass('header__top--open') === false) {
+//       $('.burger').addClass('burger--follow')
+//     } else {
+//       $('.burger').removeClass('burger--follow')
+//     }
+//   }, 0)
+//   $('.burger, .overlay, .header__top a').on('click', function (e) {
+//     e.preventDefault()
+//     $('.header__top').toggleClass('header__top--open')
+//     $('.overlay').toggleClass('overlay--show')
+//   })
+
+//   $('.footer__top-title--slide').on('click', function () {
+//     $(this).next().slideToggle()
+//   })
+// })
+
+$('.footer__nav-title--slide').on('click', function () {
+  $(this).next().slideToggle()
 })
